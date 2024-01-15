@@ -1,0 +1,24 @@
+{
+    "title": "Garen@Upchain_OpenSpace",
+    "description": "Garen attended OpenSpace raised by Upchain in January 2024",
+    "image": "ipfs://QmRMZEyUv7gJEmDUNZrprfmpsXGFReEc3opVvBQecFjkhi",
+    "attributes": [
+        {
+            "trait_type": "Release number of Garen@Upchain_OpenSpace",
+            "value": "001"
+        },
+        {
+            "trait_type": "Style",
+            "value": "Cyberpunk"
+        },
+        {
+            "trait_type": "organization",
+            "value": "OpenBuild"
+        },
+        {
+            "trait_type": "Accessories",
+            "value": "Sunglasses"
+        }
+    ],
+    "version": "1"
+}
