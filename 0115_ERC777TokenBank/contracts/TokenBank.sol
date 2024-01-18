@@ -11,7 +11,7 @@ interface IERC20TokenGTT {
 
     function transfer(address, uint256) external returns (bool);
 
-    function safeTransferFrom(IERC20, address, address, uint256 value) external;
+    function safeTransferFrom(IERC20, address, address, uint256) external;
 
     function safeTransfer(IERC20, address, uint256) external;
 }
