@@ -34,11 +34,7 @@ contract TokenBank is Bank {
     }
 
     function depositToken(uint _tokenAmount) public {
-        iERC20Token.safeTransferFrom(
-            msg.sender,
-            address(this),
-            _tokenAmount
-        );
+        iERC20Token.safeTransferFrom(msg.sender, address(this), _tokenAmount);
         tokenBalance[msg.sender] += _tokenAmount;
         _handleRankWhenDepositToken();
     }
@@ -81,7 +77,7 @@ contract TokenBank is Bank {
             for (uint i = convertedIndex - 3; i > 1; i--) {
                 if (membershipIndex != 0) {
                     if (
-                        tokenBalance[msg.sender] >
+                        tokenBalance[msg.sender] >=
                         tokenBalance[tokenRank[i - 2]]
                     ) {
                         indexRecord = i - 2;
@@ -102,7 +98,9 @@ contract TokenBank is Bank {
         } else {
             // Case 2: msg.sender is not inside the top3 rank.
             for (uint i = 3; i > 0; i--) {
-                if (tokenBalance[msg.sender] > tokenBalance[tokenRank[i - 1]]) {
+                if (
+                    tokenBalance[msg.sender] >= tokenBalance[tokenRank[i - 1]]
+                ) {
                     indexRecord = i - 1;
                     // move backward the element(s) which is(/are) right at the index and also behind the index
                     for (uint j = 2; j > i - 1; j--) {
